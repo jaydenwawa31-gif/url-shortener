@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern URL Shortener</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #4f46e5, #9333ea);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+
+    h1 { margin-bottom: 20px; font-weight: 600; }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: #ffffff;
+      color: #4f46e5;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      background: #e0e7ff;
+    }
+
+    #result {
+      margin-top: 20px;
+      word-break: break-all;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .copy-btn {
+      margin-top: 10px;
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+    }
+
+    .copy-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🔗 URL Shortener</h1>
+
+  <input type="text" id="url" placeholder="Paste your long URL here">
+  <input type="text" id="slug" placeholder="Custom slug (optional)">
+
+  <button onclick="shorten()">Shorten URL</button>
+
+  <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
